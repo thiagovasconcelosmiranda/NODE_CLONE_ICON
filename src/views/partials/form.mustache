@@ -1,0 +1,102 @@
+ <div class="col-img-i-4" >
+    <div class="group-3-i" > 
+          <form method="post" action="/contato">
+              {{#contato}}
+                <p>mande uma menssagem</p>
+              {{/contato}}
+              {{#home}}
+                <h3> entre em contato</h3>
+              {{/home}}
+              {{#errorMsg}}
+                  <p class="error">Digte os campos em vermelho</p>
+              {{/errorMsg}}
+              {{#errorEnv}}
+                  <p class="error-env">Dados enviados com sucesso</p>
+              {{/errorEnv}}
+              {{#faq}}
+              <div class="align-text-3 h1">
+                <p>Esse FAQ não foi útil para você?</p>
+                <p>Ao preencher os campos abaixo, você automaticamente concorda com nossa política de privacidade de Dados.</p>
+                <h3>mande a sua pergunta para nós</h3>
+              </div>
+            
+              {{/faq}}
+            <div class="group-input-3">
+              <input class="
+                 {{#error.nome}}
+                   error-input
+                 {{/error.nome}}
+              " type="text" name="nome" value="{{nome}}" placeholder="Nome"/>
+            </div>
+            <div class="group-input-3 align-Flex">
+              <input class="input-wight 
+                {{#error.email}}
+                   error-input
+                {{/error.email}}
+              " type="email" name="email" value="{{email}}" id="email" placeholder="Email"/>
+              <input class="input-wight top
+                 {{#error.cell}}
+                   error-input
+                 {{/error.cell}}
+              " type="text" name="cell" value="{{cell}}" id="cell2" placeholder="Telefone"/>
+            </div>
+            <div class="group-input-3">
+              <select class="
+                   {{#error.item1}}
+                   error-input
+                 {{/error.item1}}" type="text" name="item1">
+                  <option value="{{item1}}"> O que você procura?</option>
+                  <option value="Acessibilizar meu SAC com Libras"> Acessibilizar meu SAC com Libras</option>
+                  <option value="Conversar com colaboradoes surdos"> Conversar com colaboradoes surdos</option>
+                  <option value="Atender surdos presencialmente">Atender surdos presencialmente</option>
+                  <option value="Tornar minha cidade acessível">Tornar minha cidade acessível</option>
+                  <option value="Acessibilizar eventos com iterpretes de Libras">Acessibilizar eventos com iterpretes de Libras</option>
+                  <option value="Acessibilizar videos">Acessibilizar videos</option>
+                  <option value="Aprender Libras">Aprender Libras</option>
+                  <option value="Ainda não sei">Ainda não sei</option>
+                  <option value="Outra coisa">Outra coisa</option>
+               </select>
+            </div>
+              <div class="group-input-3">
+                <select class="
+                  {{#error.item1}}
+                      error-input
+                   {{/error.item1}}
+                " type="text" name="item2" >
+                   <option vlaue="{{item2}}"> Qual o perfil da empresa que você trabalha?</option>
+                   <option vlaue="Saúde (Hospitais/Clínicas)"> Saúde (Hospitais/Clínicas)</option>
+                   <option vlaue="Logistica/indústria de base">Logistica/indústria de base</option>
+                   <option vlaue="Telefonia">Telefonia</option>
+                   <option vlaue="Cartótios">Cartótios</option>
+                   <option vlaue="Tribunais">Tribuinais</option>
+                   <option vlaue="Finaceiro">Finaceiro</option>
+                   <option vlaue="Varejo">Varejo</option>
+                   <option vlaue="Prefeituras e Estados">Prefeituras e Estados</option>
+                   <option vlaue="Transporte">Transporte</option>
+                   <option vlaue="Outros">Outros</option>
+                 </select>
+              </div>
+              <div class="group-input-3">
+                <select class="
+                    {{#error.item1}}
+                       error-input
+                    {{/error.item1}}
+                " type="text" name="item3" >
+                  <option value="{{item3}}">você é surdo?</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+              </select>
+              </div>
+              <div class="group-button-3" 
+               {{#faq}}
+                  style="margin-left: 20%;"
+                {{/faq}}>
+                  <button>Enviar</button>
+              </div>
+           </form> 
+        </div>
+      </div>
+      <script src="/js/jquery.mask.min.js" ></script>
+      <script src="/js/mask.js" ></script>
+  </body>
+</html>
