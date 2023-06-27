@@ -13,18 +13,16 @@
     <!--JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
-
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>{{title}}</title>
   </head>
-  
    <body>
-      <ul>
+      <ul id="navbar">
         <div class="img-logo">
             <img src="/images/logo-tipo.png" alt="logo.jpg"/>
         </div>
-        <div class="navbar-i">
+        <div class="navbar-i"  id="i">
           <li><a 
           {{#home}}
              class="active"
@@ -52,10 +50,16 @@
              class="active"
             {{/contato}}
             href="/contato">Contato</a></li>
-          <li><a href="#">Privacidade</a></li>
+          <li><a 
+          {{#privacy}}
+             class="active"
+            {{/privacy}}
+          href="/privacidade">Privacidade</a></li>
     </div>
-    <div class="option">
+    <div class="option" id="option">
         <img src="images/icons8-cardápio-50.png">
     </div> 
     </ul>
+    <!--JS-->
+    <script src="/js/scriptsNavbar.js"></script>
 
