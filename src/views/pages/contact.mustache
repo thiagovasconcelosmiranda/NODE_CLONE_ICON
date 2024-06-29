@@ -1,8 +1,6 @@
 {{>partials/header}}
-
     <div class="row-i-12">
-       <div class="col-img-i-4" >
-         <div class="group-3-i">
+       <div class="col-img-i-4">
             <div class="text-i-align-1">
                <h1>entre em contato</h1>
                <p>Quer construir uma empresa
@@ -11,80 +9,21 @@
                 central de tradução simultânea de Libras da AME.</p>
                 <p>Ao preencher os campos abaixo, 
                 você automaticamente concorda com
-                nossa<a href="#"> política de privacidade de Dados </a>.</p>
+                nossa.</p>
             </div>
-         </div>
        </div>
-       {{>partials/form}}
+       <div class="col-img-i-4">
+         {{>partials/form-components}}
+       </div>
     </div>
     <div class="row-i-12">
         <div class="col-img-i-5">
-            <h5>visite a central de Libras</h5>
            <div class="circle-map-i">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.4334293948571!2d-46.56079986236063!3d-23.54207794179871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e8cb0020dcd%3A0x4b63c6e530614b3c!2sR.%20Serra%20de%20Botucatu%2C%201197%20-%20Vila%20Gomes%20Cardim%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003317-001!5e0!3m2!1sen!2sbr!4v1686835270047!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
            </div>
         </div>
-        <div class="col-img-i-5"></div>
     </div>
-    <div class="row-i-8">
-        <div class="align-i-1">
-        <div class="col-i-group">
-            <div class="col-i-end">
-              <div class="group-2">
-               <div>
-                <div class="i-img-4">
-                  <img src="/images/icons8-localização-50.png" alt="localization"/>
-                </div>
-                 <h3 class="h3">Nossa localização</h3>
-                 <p class="p">Rua Serra de Botucatu, 1197  Tatuapé - 03317-001- São Paulo/SP</p>
-                </div>
-              </div>
-              <div class="group-2 top">
-                <div>
-                   <div class="i-img-4">
-                    <img src="/images/icons8-smartphone-50.png" alt="cell.png"/>
-                   </div>
-                   <h3 class="h3">Contato</h3>
-                   <p class="p">(11) 2360-8900</p>
-                   <p></p>
-                </div>
-              </div>
-              <div class="group-2 top">
-                <div>
-                  <div class="i-img-4">
-                    <img src="/images/icons8-mensagem-48.png" alt="email.png"/>
-                  </div>
-                   <h3 class="h3">Fale com a gente</h3>
-                   <p class="p">contato-icom@ame-sp.org.br</p>
-                   <p class="p">Fale com  o DPO - privacidade@ame-sp.org.br</p>
-                  </div>
-                 </div>
-              </div>
-            </div>
-            <div class="col-i-social">
-                <div class="i-social">
-                  <div class="circle-social">
-                    <a href="https://www.facebook.com/icomlibras/"><ion-icon name="logo-facebook"></ion-icon> </a>
-                  </div> 
-                  <div class="circle-social">
-                      <a href="https://twitter.com/IcomLibras"><ion-icon name="logo-twitter"></ion-icon></a>
-                  </div>
-                  <div class="circle-social">
-                   <a href="https://www.linkedin.com/company/26192230/admin/"><ion-icon name="logo-linkedin"></ion-icon></a>
-                  </div>
-                  <div class="circle-social">
-                   <a href="https://www.instagram.com/icomlibras/">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                   </a>
-                  </div>
-                  <div class="circle-social">
-                   <a href="https://www.youtube.com/channel/UCZEX82ZY3o7NLHdiSLt-DkA">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                   </a>
-                  </div>   
-                </div>
-            </div>
-        </div>     
-    </div> 
+    {{>partials/social}}
+     <script type="text/javascript" src="/js/navbar-script.js"></script> 
  </body>
 </html>
