@@ -5,10 +5,12 @@ export interface ContatoInterface extends Model{
        id: number,
      nome: string,
     email: string,
-     cell: string,
-    item1: string,
-    item2: string,
-    item3: string
+    phone: string,
+    perg1: string,
+    perg2: string,
+    perg3: string,
+    perg4: string,
+    description: string
 }
 
 export const Contato = sequelize.define<ContatoInterface>('Contato', {
@@ -23,17 +25,23 @@ export const Contato = sequelize.define<ContatoInterface>('Contato', {
    email:{
     type: DataTypes.STRING
    },
-   cell:{
+   phone:{
     type: DataTypes.STRING
    },
-   item1:{
+   perg1:{
     type: DataTypes.STRING
    },
-   item2:{
+   perg2:{
     type: DataTypes.STRING
    },
-   item3:{
+   perg3:{
     type: DataTypes.STRING
+   },
+   perg4:{
+    type: DataTypes.STRING
+   },
+   description:{
+     type: DataTypes.STRING
    }
 },{
     tableName: 'contato',

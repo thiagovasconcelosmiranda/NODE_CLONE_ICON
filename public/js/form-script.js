@@ -1,4 +1,16 @@
 if (document.querySelector('.contact-col')) {
+
+    var form = {
+        name:'Thiago',
+        email: '',
+        phone: '',
+        perg1:'',
+        perg2: '',
+        perg3:'',
+        perg4:'',
+        description: ''
+    }
+
     let button = document.querySelector('.button-form');
 
     button.addEventListener('click', () => {
@@ -24,10 +36,9 @@ if (document.querySelector('.contact-col')) {
                 }
             }
         });
-
+      
         if(count === countInput){
-           button.type="submit";
+            button.type="submit";
         }
     }
-
 }
