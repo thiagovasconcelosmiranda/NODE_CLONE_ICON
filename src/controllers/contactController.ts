@@ -3,47 +3,29 @@ import validator from 'validator';
 import {Contato} from '../models/Contato';
 
 
-export const getContact = async (req: Request, res:Response) => {
+export const getContact = async ( req: Request, res:Response) => {
   let title: string = 'Contato - ICON';
-  let contato: boolean = true;
-    res.render('pages/contact', {title, contato});
+   res.render('pages/contact', {title});
 }
 
-export const AddContact = async (req: Request, res:Response) => {
-    let contato: boolean = true;
-    let {nome, email, cell, item1, item2, item3, home} = req.body;
+export const AddContact = async (req: Request, res: Response) => {
+    let {name} = req.body;
+    console.log(name);
    
-    let error = {
-         nome: false as boolean,
-        email: false as boolean,
-         cell: false as boolean,
-        item1: false as boolean,
-        item2: false as boolean,
-        item3: false as boolean,
-    };
-    let errorMsg: boolean = false;
-    let errorEnv: boolean = false;
-  
-    (nome ? error.nome = false : error.nome = true);
-    (email ? error.email = false : error.email = true);
-    (cell ? error.cell = false : error.cell = true);
-    (item1 ? error.item1 = false : error.item1 = true);
-    (item2 ? error.item2 = false : error.item2 =true);
-    (item3 ? error.item3 = false : error.item3 = true);
+    /*
+   if(name && email 
+     && phone && perg1
+     && perg2 && perg3
+     && perg4 && description){
 
-   if(!error.nome && !error.email 
-     && !error.cell && !error.item1 
-     && !error.item2 && !error.item3){
-         const contato = await Contato.create({
-            nome, email, cell, item1, item2, item3
+         const contact = await Contato.create({
+            name, email, phone, perg1, perg2, perg3, perg4, description
          });
 
-         if(contato){
-            errorEnv = true;
-            res.render('pages/contact', {error, errorEnv, contato});
+         if(contact){
+            res.render('pages/contact');
          }
-   }else{
-        errorMsg = true;
-        res.render('pages/contact', {error, errorMsg, contato,  nome, email, cell, item1, item2, item3});  
    }
+    */
+
 }
