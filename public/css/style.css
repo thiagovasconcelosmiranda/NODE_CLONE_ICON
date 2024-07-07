@@ -1650,34 +1650,25 @@ video {
   justify-content: center;
 }
 
-.row-i-8 .col-i {
-  width: 80%;
-  height: auto;
-}
-
-.row-i-8 .col-i {
+.col-i {
   width: 100%;
   height: auto;
   margin-top: 10%;
 }
-
-.text-i-3 {
+.col-i .text-i-3 {
   width: 50%;
   margin-left: 5%;
 }
-
-.row-i-8 .col-i .text-i-3 h1 {
+.col-i .text-i-3 h1 {
   color: #1e43a7;
   font-size: 3em;
   font-weight: bold;
 }
-
-.row-i-8 .col-i .text-i-3 p {
+.col-i .text-i-3 p {
   color: #000;
   margin-top: 40px;
 }
-
-.row-i-8 .col-i .col-i-blog {
+.col-i .col-i-blog {
   width: 100%;
   height: auto;
   display: flex;
@@ -1708,7 +1699,6 @@ video {
   display: flex;
   flex-direction: column;
 }
-
 .blog-item .blog-img {
   width: 100%;
   height: 0;
@@ -1719,8 +1709,7 @@ video {
 .blog-item .blog-img img {
   width: 108%;
 }
-
-.blog-info {
+.blog-item .blog-info {
   width: 80%;
   padding-left: 30px;
   padding-right: 30px;
@@ -1728,17 +1717,15 @@ video {
   justify-content: center;
   flex-direction: column;
 }
-
-.blog-info h3 {
-  font-size: 14px;
+.blog-item .blog-info .pagination-number {
+  font-size: 12px;
   color: #1e43a7;
   margin-top: 40px;
   width: 100%;
   font-weight: bolder;
 }
-
-.blog-info .p {
-  font-size: 14px;
+.blog-item .blog-info .pagination-number .p {
+  font-size: 12px;
   color: #1e43a7;
   margin-top: 20px;
 }
@@ -1753,28 +1740,32 @@ video {
   margin-top: 10px;
 }
 
-.col-i-pagination {
+.col-pagination-items {
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.col-i-pagination .pagination-i {
+.col-pagination-items .pagination-i {
   width: 60%;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.pagination-i .p {
+.col-pagination-items .pagination-i .p {
   margin: 25px 0;
   color: #000;
 }
-
-.pagination-i .circle-pagination {
+.col-pagination-items .pagination-i p {
+  text-decoration: none;
+  color: #000;
+}
+.col-pagination-items .pagination-i span {
+  font-size: 9px;
+}
+.col-pagination-items .pagination-i .circle-pagination {
   width: 30px;
   height: 30px;
   background-color: rgb(224, 215, 215);
@@ -1783,34 +1774,18 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-
-.pagination-i .circle-pagination .h3 {
+.col-pagination-items .pagination-i .circle-pagination h3 {
   margin: 25px 0;
-}
-
-.circle-pagination-end {
-  width: 100px;
-  height: 30px;
-  border-radius: 200px;
-  background-color: rgb(224, 215, 215);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pagination-i a {
-  text-decoration: none;
   color: #000;
+  font-size: 16px;
 }
-
-.pagination-i span {
-  font-size: 9px;
+.col-pagination-items .pagination-i .circle-pagination:hover {
+  background-color: #000;
 }
-
-.circle-pagination-end .h3 {
-  margin: 25px 0;
-  font-size: 18px;
+.col-pagination-items .pagination-i .circle-pagination:hover .pagination-number {
+  color: #fff;
 }
 
 .pagination-i .active-pagination {
@@ -1818,18 +1793,13 @@ video {
   color: #fff;
 }
 
-.circle-pagination:hover,
-.circle-pagination-end:hover {
+.circle-pagination:hover {
   background-color: #000;
-  color: #fff;
-}
-
-.pagination-i .active-pagination a {
-  color: #fff;
 }
 
 .circle-pagination .h3 {
   font-size: 14px;
+  background-color: red;
 }
 
 .fontSize12 {
