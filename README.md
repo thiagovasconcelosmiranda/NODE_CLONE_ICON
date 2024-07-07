@@ -3,7 +3,7 @@ Você pode clonar este repositório OU baixar o .zip
 
 Ao descompactar, é necessário rodar o
  > npm install
-  pra instalar as dependências e gerar o *modulos_dependencias*.
+  pra instalar as dependências e gerar o *node_modules*.
 
 ## Rodando o projeto no navegador
 Será rodado o servidor com endereço http://localhost:4002.
