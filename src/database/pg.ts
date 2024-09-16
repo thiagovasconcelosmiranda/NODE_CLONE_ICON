@@ -1,14 +1,16 @@
-import { Sequelize } from "sequelize";
-import dotenv from 'dotenv';
+import { PrismaClient } from "@prisma/client";
+  const prisma = new PrismaClient();
 
-dotenv.config();
- export const sequelize = new Sequelize(
-    process.env.PG_DB as string,
-    process.env.PG_USER as string,
-    process.env.PG_PASSWORD as string,
-    {
-      dialect: 'postgres',
-      port: parseInt(process.env.PG_PORT as string)
-    }
+ const main = async () =>{
+      console.log("Conectado sucesso!");
+  }
 
- );
+  main().then( async (e)=>{
+   await prisma.$disconnect();
+  }).catch( async (e) =>{
+   console.log(e);
+   await prisma.$disconnect();
+   process.exit(1);
+   
+  });
+  export { prisma, main};

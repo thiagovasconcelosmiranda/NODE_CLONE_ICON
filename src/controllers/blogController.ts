@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import { Blog } from '../models/Blog';
+import { PrismaClient } from "@prisma/client";
+import { prisma } from "../database/pg";
 
 
 export const blog = async (req: Request, res: Response) => {
@@ -7,17 +8,28 @@ export const blog = async (req: Request, res: Response) => {
 };
 
 export const blogPag = async (req: Request, res: Response) => {
-    let { pag } = req.params;
-    const limit = Number(3);
-    const offset = 0 + (Number(pag) - 1) * limit;
-    const countBlogs = await Blog.findAndCountAll();
+    
+    const skip = Number(req?.params?.pag) || 0;
+    const take = 3;
 
-    const blogs = await Blog.findAll({
-        limit: limit,
-        offset: offset
-    });
+    const [blog, total]  = await prisma.$transaction([
+        prisma.blog.findMany({
+           select:{
+            id: true,
+            imagem: true,
+            titulo: true,
+            descricao: true,
+            data: true
+           },
+           skip, take
+        }),
 
-    return res.json({ blog: blogs, limit: limit, countBlog: countBlogs.count });
+        prisma.blog.count()
+    ]);
+
+    const totalPage = Math.ceil(total / take)
+    
+    return res.json({ blog: blog, total:total, totalPage: totalPage});
 
 };
 

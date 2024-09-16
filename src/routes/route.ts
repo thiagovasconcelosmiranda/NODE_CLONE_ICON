@@ -14,7 +14,7 @@ route.get('/', HomeController.Home);
 route.get('/contato', ContactController.getContact);
 route.post('/contato-add', urlencodedParser , ContactController.AddContact);
 route.get('/blog', BlogController.blog);
-route.get('/blog/:pag', BlogController.blogPag);
+route.get('/blog/:pag', BlogController.blogPag);//
 route.get('/sobre', AboutController.about);
 route.get("/faq", FaqController.faq);
 route.get("/privacidade", PrivacyController.privacy);

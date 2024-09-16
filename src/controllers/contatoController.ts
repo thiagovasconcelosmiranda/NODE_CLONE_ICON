@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
 import validator from 'validator';
-import {Contato} from '../models/Contato';
 
 
 export const getContato = async (req: Request, res:Response) => {
   let title: string = 'Contato - ICON';
   let contato: boolean = true;
     res.render('pages/contato', {title, contato});
-}
+}/*
 
 export const AddContato = async (req: Request, res:Response) => {
     let contato: boolean = true;
@@ -50,3 +49,4 @@ export const AddContato = async (req: Request, res:Response) => {
    
 
 }
+   */

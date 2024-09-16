@@ -1502,7 +1502,7 @@ video {
 }
 .row-i-18 .col-img-i-5 .i-img-x-align .circle-13 {
   width: 100%;
-  height: 50%;
+  height: 40%;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -1527,7 +1527,7 @@ video {
 }
 .row-i-18 .col-img-i-5 .i-img-x-7 .circle-13 {
   width: 100%;
-  height: 30%;
+  height: 25%;
   border-radius: 100%;
   background-color: #fff;
 }

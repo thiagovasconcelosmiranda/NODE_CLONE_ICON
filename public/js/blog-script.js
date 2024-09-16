@@ -1,10 +1,13 @@
 'use strict'
+
+//const { json } = require("body-parser");
+
 let currentPage;
 
 if (document.querySelector('.col-i-blog')) {
     let blogInner;
 
-    async function ajaxPagination(pag) {
+    async function ajaxPagination(pag = 0) {
         currentPage = pag;
         var req = await fetch(`http://localhost:4002/blog/${pag}`, {
             method: 'GET'
@@ -17,29 +20,29 @@ if (document.querySelector('.col-i-blog')) {
     function blogList(json) {
         blogInner = document.querySelector(".col-i-blog .center");
         blogInner.innerHTML = '';
-        let limit = json.limit;
 
         json.blog.forEach(item => {
             blogInner.insertAdjacentHTML("beforeEnd",
                 `
              <div class="blog-item">
                  <div class="blog-img">
-                     <img src="/images/${item.image}"/>
+                     <img src="/images/${item.imagem}"/>
                  </div>
                   <div class="blog-info">
-                       <h3 class="fontsize">${item.title}</h3>
+                       <a href=""><h3 class="fontsize">${item.titulo}</h3></a>
                         <p class="p-blue">${item.data}</p>
-                        <p class="p-black">${item.descrition}</p>
+                        <p class="p-black">${item.descricao}</p>
                   </div>
               </div>
             `
             );
         });
-        const totalPagination = Math.round(json.countBlog / limit);
-        pagination(totalPagination);
+        const totalPage = json.totalPage;;
+        pagination(totalPage);
     }
 
-    function pagination(totalPagination) {
+    function pagination(totalPage) {
+        
         blogInner.insertAdjacentHTML("beforeEnd",
             `<div class="col-pagination-items"></div>`
         );
@@ -50,12 +53,12 @@ if (document.querySelector('.col-i-blog')) {
         paginationItem.classList.add('pagination-i');
         let p = document.createElement('p');
         p.classList.add('p');
-        let text1 = document.createTextNode(`Página ${currentPage} de ${totalPagination}`);
+        let text1 = document.createTextNode(`Página ${currentPage} de ${totalPage}`);
         paginationItem.appendChild(text1);
         paginationItems.appendChild(paginationItem);
 
 
-        for (let i = 0; i < totalPagination; i++) {
+        for (let i = 0; i < totalPage; i++) {
             let div = document.createElement('div');
             div.classList.add('circle-pagination');
             div.setAttribute('data-pagination', i + 1);
@@ -75,8 +78,7 @@ if (document.querySelector('.col-i-blog')) {
             });
         });
     }
-
-    ajaxPagination(1);
+    ajaxPagination(0);
 }
 
 
