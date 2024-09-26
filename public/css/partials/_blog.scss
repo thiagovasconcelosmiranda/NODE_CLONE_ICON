@@ -4,7 +4,6 @@
     background-color: #fff;
     display: flex;
     justify-content: center;
-
 }
 
 .col-i {
@@ -77,7 +76,6 @@
         }
     }
 
-
     .blog-info {
         width: 80%;
         padding-left: 30px;
@@ -85,6 +83,13 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        a{
+            color: #3556c2;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
 
 
         .pagination-number {
@@ -169,14 +174,8 @@
 }
 
 
-
-.pagination-i .active-pagination {
-    background-color: #3556c2;
-    color: #fff;
-}
-
 .circle-pagination:hover {
-    background-color: #000;
+    background-color: #151515;
 }
 
 
@@ -192,7 +191,6 @@
 .circle-pagination .h1 {
     font-size: 12px;
 }
-
 
 @media (min-width: 700px) and (max-width: 900px) {}
 

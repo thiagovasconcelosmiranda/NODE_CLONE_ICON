@@ -26,6 +26,6 @@
         });
 
         if (count === countInput) {
-            button.type="submit";
+          button.type="Submit";
         }
     }

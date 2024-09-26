@@ -9,19 +9,36 @@ export const getContact = async (req: Request, res: Response) => {
 }
 
 export const AddContact = async (req: Request, res: Response) => {
-   let { name, email, phone, perg1, perg2, perg3, perg4, description } = req.body;
+   let prisma = new PrismaClient();
+   let title = 'home';
+   let flash = '';
 
-   if (name && email
-      && phone && perg1
-      && perg2 && perg3
-      && perg4) {
-         console.log(req.body);
-         
-      /*
-      if(contact){
-         res.render('pages/contact');
+   let { name, email, phone, perg1, perg2, perg3, perg4, communication, description } = req.body;
+  
+   if(name && email && phone &&
+      perg1 && perg2 && perg3 && perg4
+   ){
+      let desc = description ? description : 'vazio';
+      let com = communication ? communication : 'vazio';
+
+      
+     let contato = await prisma.contato.create({
+        data:{
+         name: name,
+         email: email,
+         fone: phone,
+         perg1: perg1,
+         perg2: perg2,
+         perg3: perg3,
+         perg4: perg4,
+         comunicacao: communication,
+         descricao: description
+        }
+      });
+
+      if(contato){
+          flash = 'Adicionado com sucesso!';
       }
-      */
-
    }
+   res.render('pages/home',[title, flash]);
 }
