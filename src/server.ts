@@ -14,7 +14,7 @@ server.use(express.json());
 dotenv.config();
 main();
 
-server.use(route);
+//server.use(route);
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 server.engine('mustache', mustache());
